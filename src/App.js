@@ -1,13 +1,19 @@
-import logo from "./logo.svg";
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import React from "react";
 import "./App.css";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome to User Micro Frontend</p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <React.Fragment>
+        <Routes>
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/" element={<Login />} />
+        </Routes>
+      </React.Fragment>
+    </BrowserRouter>
   );
 }
 
